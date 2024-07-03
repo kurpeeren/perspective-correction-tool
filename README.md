@@ -48,7 +48,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For any inquiries or further information, please contact me at [kurpeeren@gmail.com].
+For any inquiries or further information, please contact me at kurpeeren@gmail.com.
 
 ---
 
