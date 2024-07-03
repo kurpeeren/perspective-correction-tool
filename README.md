@@ -52,4 +52,3 @@ For any inquiries or further information, please contact me at kurpeeren@gmail.c
 
 ---
 
-Feel free to update this README.md file with additional information as needed.
