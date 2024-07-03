@@ -42,13 +42,6 @@ This project is a .NET C# based image processing application that uses the AForg
 4. **View Corrected Video**:
     - The application will automatically correct the perspective and display the corrected video in real-time.
 
-## Benefits of Automation
-
-- **Improved Accuracy**: Automating perspective correction ensures consistent and precise adjustments, reducing human error.
-- **Increased Efficiency**: Real-time correction allows for immediate results, saving time in manual adjustments.
-- **Enhanced Usability**: Simplifies the process of perspective correction, making it accessible to users without specialized knowledge.
-- **Scalability**: Can be easily integrated into larger automation systems for various applications such as surveillance, quality control, and virtual reality.
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
