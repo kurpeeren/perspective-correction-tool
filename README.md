@@ -1,54 +1,65 @@
-# PerspectiveCorrectionTool
+# Perspective Correction Tool
 
-This project is a .NET C# based image processing application that uses the AForge library. During my internship, I developed this tool to capture the video stream from a camera and perform real-time perspective correction based on four selected points. The corrected image is then displayed on the screen.
+A simple .NET Windows Forms application for real-time perspective correction of a video stream. This tool, originally developed during an internship, captures video from a camera, allows the user to select four points defining a quadrilateral, and then transforms the perspective of the video feed to that rectangle.
+
+This repository contains a refactored and modernized version of the original project, making it easier to understand, maintain, and contribute to.
 
 ## Features
 
-- **Real-time Video Stream**: Captures live video feed from a connected camera.
-- **Perspective Correction**: Automatically corrects the perspective of the captured video based on four user-selected points.
-- **User-Friendly Interface**: Allows users to easily select points for perspective correction.
+- **Real-time Video Stream**: Captures a live video feed from any connected camera recognized by Windows.
+- **Interactive Perspective Correction**: Click four points on the video to define the area to be corrected.
+- **Toggle View**: Switch between the original and the perspective-corrected view.
+
+## Screenshots
+
+![Application Screenshot](screenshot.png)
 
 ## Installation
 
-1. **Prerequisites**:
-    - .NET Framework installed on your machine.
-    - AForge.NET library.
+1.  **Prerequisites**:
+    *   Windows Operating System.
+    *   [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) or later.
 
-2. **Clone the Repository**:
+2.  **Clone the Repository**:
     ```bash
     git clone https://github.com/yourusername/PerspectiveCorrectionTool.git
     ```
 
-3. **Open the Project**:
-    - Open the project in Visual Studio.
-
-4. **Restore NuGet Packages**:
-    - Restore the required NuGet packages for the AForge library.
-
-5. **Build the Project**:
-    - Build the project to ensure all dependencies are correctly installed.
+3.  **Open and Build**:
+    *   Open `PerspectiveCorrectionTool.sln` in Visual Studio.
+    *   Build the solution (press `Ctrl+Shift+B`). NuGet packages should be restored automatically.
 
 ## Usage
 
-1. **Connect a Camera**:
+1.  **Connect a Camera**:
     - Ensure your camera is connected and recognized by your system.
 
-2. **Run the Application**:
-    - Start the application from Visual Studio or the executable file.
+2.  **Run the Application**:
+    - Start the application from Visual Studio (press `F5`) or run the executable from the `bin/Debug` or `bin/Release` folder.
 
-3. **Select Points for Perspective Correction**:
-    - Use the interface to select four points on the video feed that define the quadrilateral area you want to correct.
+3.  **Select a Camera**:
+    - Choose your camera from the dropdown menu and click "Start".
 
-4. **View Corrected Video**:
-    - The application will automatically correct the perspective and display the corrected video in real-time.
+4.  **Select Points for Correction**:
+    - Click four points on the video feed to define the quadrilateral area you want to correct.
+    - After selecting four points, click the "Apply Perspective" button.
+
+5.  **View Corrected Video**:
+    - The application will display the corrected video in real-time.
+    - You can toggle between the original and corrected view using the same button.
+    - To select new points, click on the image again to clear the selection.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or want to fix a bug, please feel free to:
+
+1.  **Fork** the repository.
+2.  Create a new **branch** for your feature or fix.
+3.  Make your changes.
+4.  Submit a **pull request**.
+
+Please try to follow the existing code style and add comments for any new logic.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Contact
-
-For any inquiries or further information, please contact me at kurpeeren@gmail.com.
-
----
-
+This project is licensed under the MIT License. See the `LICENSE` file for details.
