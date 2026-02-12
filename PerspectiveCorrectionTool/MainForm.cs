@@ -47,6 +47,11 @@ namespace PerspectiveCorrectionTool
                 cboDevice.Items.Add(device.Name);
             }
             cboDevice.SelectedIndex = 0;
+
+            // Palette UX: Initial state guidance
+            btnFilter.Text = "Select Point 1/4";
+            btnFilter.Enabled = false;
+            pictureBox1.Cursor = Cursors.Default;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -57,6 +62,7 @@ namespace PerspectiveCorrectionTool
                 _videoSource.WaitForStop();
                 _videoSource = null;
                 btnStart.Text = "Start";
+                pictureBox1.Cursor = Cursors.Default;
             }
             else
             {
@@ -64,6 +70,7 @@ namespace PerspectiveCorrectionTool
                 _videoSource.NewFrame += VideoSource_NewFrame;
                 _videoSource.Start();
                 btnStart.Text = "Stop";
+                pictureBox1.Cursor = Cursors.Cross;
             }
         }
 
@@ -154,6 +161,18 @@ namespace PerspectiveCorrectionTool
                 // but for now, we assume the display and processing size are the same.
                 _sourceCorners.Add(new AForge.IntPoint(e.Location.X, e.Location.Y));
                 _clickCount++;
+
+                // Palette UX: Update button text to guide user
+                if (_clickCount < 4)
+                {
+                    btnFilter.Text = $"Select Point {_clickCount + 1}/4";
+                    btnFilter.Enabled = false;
+                }
+                else
+                {
+                    btnFilter.Text = "Apply Perspective";
+                    btnFilter.Enabled = true;
+                }
             }
             else
             {
@@ -161,7 +180,10 @@ namespace PerspectiveCorrectionTool
                 _sourceCorners.Clear();
                 _clickCount = 0;
                 _showTransformed = false;
-                btnFilter.Text = "Apply Perspective";
+
+                // Palette UX: Reset guidance
+                btnFilter.Text = "Select Point 1/4";
+                btnFilter.Enabled = false;
             }
         }
 
